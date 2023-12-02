@@ -1,36 +1,55 @@
-Publication Project
-This project simulates a publication library with books and magazines. It utilizes Java classes, inheritance, and the Comparable interface to organize and display publications based on their genre and title.
+# Hotel Project
 
-Classes and Enum
-Genre Enum
-The Genre enum represents different genres of publications, such as SCIENCE, ROMANCE, COMIC, CLASSIC, ATHLETIC, BEAUTY, FASHION, ENTERTAINMENT, and THRILLER.
+This project simulates a hotel with different types of rooms, including Single Rooms and Suites. It demonstrates the use of inheritance, polymorphism, and sorting of room lists based on price.
 
-Publication Class
-The Publication class is an abstract class implementing the Comparable interface. It represents a generic publication and has properties:
+## Classes
 
-title: Title of the publication.
-genre: Genre of the publication (from the Genre enum).
-edition: Edition number.
-year: Publication year.
-It includes methods to print information, print a footer, get the type, and get the author or publisher.
+### Room
 
-Book Class
-The Book class extends Publication and represents a book. It has an additional property:
+The `Room` class represents a basic room and implements the `Comparable` interface. It has properties:
 
-author: Author of the book.
-Magazine Class
-The Magazine class extends Publication and represents a magazine. It has an additional property:
+- `roomNo`: Room number.
+- `price`: Price of the room.
 
-publisher: Publisher of the magazine.
-Running the Project
-The PublicationProject class is the main class that demonstrates the functionality of the publication library. It creates a list of Publication objects (including both books and magazines), sorts them based on genre and title, and prints out the information.
+### SingleRoom
 
-To run the project, execute the main method in the PublicationProject class.
+The `SingleRoom` class extends `Room` and represents a single occupancy room. It has additional properties:
 
-Sample Output
-The program will display the publications sorted by genre and title, including information such as title, edition, publication year, type (book or magazine), and author or publisher.
+- `bedType`: Type of bed in the room.
+- `smoking`: Smoking status.
 
-Bad Blood: Secrets and Lies in a Silicon Valley Startup. Edition (1) published in 2018 thriller by John Carreyrou. All rights reserved!
-The Hundred-Page Machine Learning Book. Edition (1) published in 2019 science by Andriy Burkov. All rights reserved!
-People. Edition (466) published in 2020 entertainment by Meredith Corporation. All rights reserved!
-Sports Illustrated. Edition (633) published in 2020 athletic by Meredith Corporation. All rights reserved!
+### Suite
+
+The `Suite` class extends `Room` and represents a suite. It has additional properties:
+
+- `numRoom`: Number of rooms in the suite.
+- `hasKitchen`: Kitchen availability.
+- `rating`: Rating of the suite.
+
+## Running the Project
+
+The `HotelProject` class is the main class that demonstrates the functionality of the hotel. It creates lists of `SingleRoom` and `Suite`, sorts them based on price, and prints out the hotel information.
+
+To run the project, execute the `main` method in the `HotelProject` class.
+
+## Sample Output
+
+The program will display the sorted lists of Single Rooms and Suites with relevant information, including room number, price, bed type, smoking status, rating, and kitchen availability.
+
+### Sample Output:
+
+# Hotel Information
+
+| Room No | Price | Bed Type | Smoking Status |
+| ------- | ----- | -------- | --------------- |
+| 1       | $140.5| Queen    | Smoking         |
+| 2       | $130.5| Twin     | No Smoking      |
+| 3       | $150.5| King     | Smoking         |
+
+# Suite Information
+
+| Room No | Price | Rating | Kitchen         |
+| ------- | ----- | ------ | --------------- |
+| 6       | $500  | 3      | No Kitchen      |
+| 4       | $600  | 5      | With Kitchen    |
+| 5       | $800  | 5      | No Kitchen      |
